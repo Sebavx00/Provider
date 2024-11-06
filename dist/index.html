@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style css -->
+    <link rel="stylesheet" href="/res/style.css">
+
+    <!-- output -->
+
+    <link rel="stylesheet" href="/res/output.css">
+    <!-- CSS TAILWIN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- ANIMACJE  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Strona główna</title>
+    <!-- Dodanie jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- FONT AWSOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+
+
+    <div class="bg-white">
+      <header id="navbar" class="absolute inset-x-0 top-0 z-50 transition-all duration-300">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div class="flex lg:flex-1">
+              <span class="w-auto">FluxJob</span>
+          </div>
+          <div class="flex lg:hidden">
+            <button id="menu-button" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onclick="toggleMenu()">
+              <span class="sr-only">Open main menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#innowacje" class="text-lg font-semibold leading-6 text-black-900 hover: text-gray-900">Innowacje</a>
+            <a href="#dzialanie" class="text-lg font-semibold leading-6 text-black-900 hover: text-gray-900">Działanie</a>
+            <a href="#FAQ" class="text-lg font-semibold leading-6 text-black-900 hover: text-gray-900">O nas</a>
+            <a href="#footer" class="text-lg font-semibold leading-6 text-black-900 hover: text-gray-900">Kontakt</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-lg font-semibold leading-6 text-black-900">Zaloguj się <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </nav>
+      </header>
+      <header>
+          <!-- Mobile menu -->
+          <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full lg:hidden overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 hidden animate__animated">
+            <div class="flex items-center justify-between" onclick="toggleMenu()"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+                <div class="flex lg:flex-1">
+                  <span class="w-auto">FluxJob</span>
+              </div>
+                <button id="close-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" onclick="toggleMenu()">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                  <div class="space-y-2 py-6">
+                    <a href="#innowacje" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Innowacje</a>
+                    <a href="#dzialanie" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Działanie</a>
+                    <a href="#FAQ" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">O nas</a>
+                    <a href="#footer" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kontakt</a>
+                  </div>
+                  <div class="py-6">
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Zaloguj się</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      
+      <div class="flex h-screen animated-background justify-center items-center bg-slate-800">
+        <div class="mx-auto mt-10 flex justify-center px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl md:text-6xl">
+                    <span class="block xl:inline">
+                        <span class="mb-1 block">Wszystko w jednym miejscu</span>
+                        <span class="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent">
+                            znajdź, sprawdź i umów się
+                        </span>
+                    </span>
+                    <div class="mt-2">łatwo i bez obaw
+                        <span class="relative mt-3 whitespace-nowrap text-blue-600">
+                            <svg aria-hidden="true" viewBox="0 0 418 42" class="absolute top-3/4 left-0 right-0 m-auto h-[0.58em] w-fit fill-pink-400/50" preserveAspectRatio="none">
+                                <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
+                            </svg>
+                            <span class="relative">z FluxJob.</span>
+                        </span>
+                    </div>
+                </h1>
+                <p class="mx-auto mt-3 max-w-xl text-xl text-gray-500 dark:text-slate-400 sm:mt-5 md:mt-5">
+                    Znajdź specjalistów, którym możesz zaufać – lub dołącz jako ekspert, aby dotrzeć do nowych klientów. Razem tworzymy przestrzeń, gdzie każdy znajdzie to, czego szuka.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-y-4 sm:gap-x-6 sm:gap-y-0">
+                    <div class="rounded-md shadow">
+                        <a class="flex items-center justify-center rounded-md border border-transparent bg-orange h-14 w-64 text-base font-medium text-black hover:bg-orange2 transition duration-300" href="#">
+                            Rejestracja dla usługodawców
+                        </a>
+                    </div>
+                    <div class="rounded-md shadow">
+                        <a class="flex items-center justify-center rounded-md border border-transparent bg-orange h-14 w-64 text-base font-medium text-black hover:bg-orange2 transition duration-300" href="#">
+                            Rejestracja dla klientów
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+  <!-- POLE WYSZUKIWANIA USŁUGODAWCY -->
+
+  <section class="mt-12 lg:mt-24">
+    <div class="text-black">
+        <div class="container mx-auto">
+            <div class="flex flex-col items-center py-10 text-center lg:py-20">
+                <div class="w-full px-4 lg:w-1/2 lg:px-0">
+                    <div class="mb-8">
+                        <h2 class="text-4xl lg:text-3xl font-bold mb-3">
+                            Wyszukaj usługodawcę do twoich potrzeb!
+                        </h2>
+                        <p class="text-lg lg:text-xl opacity-80">
+                            Znajdź specjalistę, który spełni Twoje oczekiwania
+                        </p>
+                    </div>
+
+                    <div class="mb-10">
+                        <form action="#" method="GET">
+                            <!-- Typ usługodawcy -->
+                            <div class="relative mb-4">
+                                <label for="service-type" class="sr-only">Typ usługodawcy</label>
+                                <select id="service-type" name="service-type" class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100" required>
+                                    <option value="" disabled selected>Wybierz typ usługodawcy</option>
+                                    <option value="fryzjer">Fryzjer</option>
+                                    <option value="mechanik">Mechanik</option>
+                                    <option value="krawiec">Krawiec</option>
+                                    <!-- Dodaj więcej opcji w razie potrzeby -->
+                                </select>
+                            </div>
+
+                            <!-- Miejscowość -->
+                            <div class="relative mb-4">
+                                <label for="city" class="sr-only">Miejscowość</label>
+                                <input type="text" id="city" name="city" placeholder="Podaj miejscowość" class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100" required>
+                            </div>
+
+                            <!-- Ulica (aktywna po wpisaniu miasta) -->
+                            <div class="relative mb-4">
+                                <label for="street" class="sr-only">Ulica</label>
+                                <select id="street" name="street" class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100" disabled>
+                                    <option value="" disabled selected>Wybierz ulicę</option>
+                                    <!-- Opcje ulic pojawią się tutaj po wybraniu miasta -->
+                                </select>
+                            </div>
+
+                            <script>
+                                // JavaScript do aktywowania pola ulicy po wpisaniu miejscowości
+                                const cityInput = document.getElementById('city');
+                                const streetSelect = document.getElementById('street');
+                                
+                                cityInput.addEventListener('input', function() {
+                                    if (cityInput.value.trim() !== "") {
+                                        streetSelect.disabled = false;
+                                    } else {
+                                        streetSelect.disabled = true;
+                                    }
+                                });
+                            </script>
+
+                            <div class="rounded-md shadow mt-4">
+                                <button type="submit" class="w-full items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg">
+                                    Szukaj
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="text-lg">
+                        <p>
+                            Nie możesz znaleźć tego, czego szukasz?<br class="sm:hidden">
+                            <a href="#" class="border-b border-white pb-1">
+                                Skontaktuj się z nami
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <section class="mt-12 lg:mt-24">
+    <div class="bg-orange2 text-white -skew-y-1">
+        <div class="container mx-auto skew-y-1">
+            <div class="flex flex-col items-center py-10 text-center lg:py-20">
+                <div class="w-full px-4 lg:w-1/2 lg:px-0">
+                    <div class="mb-8">
+                        <h2 class="text-4xl lg:text-3xl font-bold mb-3">
+                            Wyszukaj usługodawcę do twoich potrzeb!
+                        </h2>
+                        <p class="text-lg lg:text-xl opacity-80">
+                            Search the forum for the answer to your question
+                        </p>
+                    </div>
+
+                    <div class="mb-10">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <form action="#" method="GET">
+                                <input type="search" name="search" placeholder="Search here for threads" class="p-4 pl-10 text-gray-600 rounded w-full border-gray-100">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="text-lg">
+                        <p>
+                            Can't find what you're looking for?<br class="sm:hidden">
+                            <a href="#" class="border-b border-white pb-1">
+                                Create a new thread
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- DO POPRAWY PÓŹNIEJ -->
+
+    <div id="innowacje" class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:text-center">
+                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">Dlaczego warto wybrać FluxJob?</p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Odkryj, jak nasza platforma może uprościć Twoje życie i zwiększyć efektywność Twojej pracy.</p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                                </svg>
+                            </div>
+                            Szybka i prosta rejestracja
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Zarejestruj się w kilka minut i rozpocznij korzystanie z naszej platformy bez zbędnych formalności.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                </svg>
+                            </div>
+                            Bezproblemowe połączenie
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Znajdź idealnych usługodawców w swojej okolicy w mgnieniu oka i załatw sprawy szybko i efektywnie.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                </svg>
+                            </div>
+                            Bezpieczeństwo transakcji
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Zaufaj nam - chronimy Twoje dane i zapewniamy bezpieczeństwo wszystkich transakcji.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 8.25h14M5 12h14m-7 3.75h7" />
+                                </svg>
+                            </div>
+                            Oceny i recenzje
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Sprawdź opinie innych użytkowników i wybierz najlepszego usługodawcę dla siebie.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                </svg>
+                            </div>
+                            24/7 wsparcie
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Nasz zespół wsparcia jest dostępny przez całą dobę, aby pomóc Ci w każdej sytuacji.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                        <dt class="text-base font-semibold leading-7 text-gray-900">
+                            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18m-7 6h7" />
+                                </svg>
+                            </div>
+                            Elastyczne opcje płatności
+                        </dt>
+                        <dd class="mt-2 text-base leading-7 text-gray-600">Wybierz spośród różnych metod płatności, które najlepiej odpowiadają Twoim potrzebom.</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+    
+    <section id="dzialanie" class="py-16 bg-gray-50">
+      <div  class="container mx-auto px-4">
+        <h2 class="text-5xl font-semibold text-gray-900 text-center mb-10">Jak działa nasza platforma?</h2>
+        <p class="text-xl text-gray-700 text-center mb-12">
+          Nasza platforma łączy specjalistów z klientami, tworząc przestrzeń do efektywnej współpracy.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Sekcja dla Usługodawców -->
+          <div class="bg-white shadow-lg rounded-lg p-10 transition-transform transform hover:scale-105">
+            <h3 class="text-3xl font-semibold text-gray-900 mb-10 flex items-center justify-center">
+              <i class="fas fa-user-tie text-blue mr-2"></i> Dla Usługodawców
+            </h3>
+            
+            <div class="space-y-8">
+              <div class="flex flex-col items-center">
+                <i class="fas fa-user-plus text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Stwórz Profil</h4>
+                <p class="text-lg text-gray-700 text-center">Zarejestruj się i zaprezentuj swoje umiejętności oraz doświadczenie.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-briefcase text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Dodaj Usługi</h4>
+                <p class="text-lg text-gray-700 text-center">Umożliwiaj klientom zrozumienie tego, co oferujesz.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-bell text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Odbieraj Powiadomienia</h4>
+                <p class="text-lg text-gray-700 text-center">Bądź na bieżąco z nowymi zleceniami.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-chart-line text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Monitoruj Efektywność</h4>
+                <p class="text-lg text-gray-700 text-center">Skorzystaj z narzędzi analitycznych, aby zwiększyć swoje szanse na sukces.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex justify-center"> <!-- Wyśrodkowanie przycisku -->
+              <a href="#" class="rounded-full border-2 border-black px-8 py-4 text-lg font-semibold text-black hover:bg-orange-500 transition duration-200">
+                Zarejestruj się jako usługodawca
+              </a>
+            </div>
+          </div>
+          
+          <!-- Sekcja dla Klientów -->
+          <div class="bg-white shadow-lg rounded-lg p-10 transition-transform transform hover:scale-105">
+            <h3 class="text-3xl font-semibold text-gray-900 mb-10 flex items-center justify-center">
+              <i class="fas fa-user-friends text-blue mr-2"></i> Dla Klientów
+            </h3>
+    
+            <div class="space-y-8">
+              <div class="flex flex-col items-center">
+                <i class="fas fa-search text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Wyszukuj Specjalistów</h4>
+                <p class="text-lg text-gray-700 text-center">Użyj naszej intuicyjnej wyszukiwarki, aby znaleźć odpowiednich usługodawców.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-star text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Przeglądaj Profile</h4>
+                <p class="text-lg text-gray-700 text-center">Zobacz opinie, oceny i przykłady pracy specjalistów.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-comment-dots text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Skontaktuj się</h4>
+                <p class="text-lg text-gray-700 text-center">Rozmawiaj bezpośrednio z usługodawcami, ustalaj szczegóły współpracy.</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <i class="fas fa-headset text-4xl text-lightblue mb-2"></i>
+                <h4 class="text-xl font-semibold text-gray-800">Wsparcie w Każdej Chwili</h4>
+                <p class="text-lg text-gray-700 text-center">Nasz zespół jest zawsze gotowy, by Ci pomóc.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex justify-center"> <!-- Wyśrodkowanie przycisku -->
+              <a href="#" class="rounded-full border-2 border-black px-8 py-4 text-lg font-semibold text-black hover:bg-orange-500 transition duration-200">
+                Zarejestruj się jako klient
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+
+
+
+
+    <!-- FAQ -->
+    <div id="FAQ" class="w-full flex justify-center items-center p-10 bg-white">
+      <div class="w-full max-w-6xl p-10 bg-white">
+        <h1 class="text-3xl font-bold mb-8 text-center">O nas</h1>
+        <p class="text-lg text-gray-700 mb-4">
+          Nasza platforma łączy klientów z najlepszymi usługodawcami w branży. Dzięki łatwej w obsłudze aplikacji możesz szybko znaleźć specjalistów, którym możesz zaufać. Jesteśmy zaangażowani w budowanie przestrzeni, w której zarówno klienci, jak i usługodawcy mogą się spotkać i współpracować w sposób efektywny.
+        </p>
+        <p class="text-lg text-gray-700 mb-4">
+          Naszym celem jest dostarczenie narzędzi, które ułatwią wyszukiwanie i nawiązywanie relacji między klientami a usługodawcami. Razem tworzymy społeczność, w której jakość usług jest na pierwszym miejscu.
+        </p>
+      </div>
+    </div>
+    
+    <div class="w-full flex justify-center items-center p-10 bg-white">
+      <div class="w-full max-w-6xl p-10 bg-white">
+        <h1 class="text-3xl font-bold mb-8 text-center">Najczęściej zadawane pytania</h1>
+        
+        <div class="border-t border-gray-300 mx-4">
+          <button class="w-full text-left py-5 flex justify-between items-center text-xl font-semibold hover:text-blue" onclick="toggleAnswer(1)">
+            <span>Jak mogę się zarejestrować?</span>
+            <span>+</span>
+          </button>
+          <div id="answer1" class="text-gray-700 text-lg pb-4 hidden">Możesz się zarejestrować, klikając przycisk 'Rejestracja' na stronie głównej i wypełniając formularz.</div>
+        </div>
+    
+        <div class="border-t border-gray-300 mx-4">
+          <button class="w-full text-left py-5 flex justify-between items-center text-xl font-semibold hover:text-blue" onclick="toggleAnswer(2)">
+            <span>Jakie usługi oferujecie?</span>
+            <span>+</span>
+          </button>
+          <div id="answer2" class="text-gray-700 text-lg pb-4 hidden">Oferujemy szeroki zakres usług, w tym pomoc w znalezieniu specjalistów w różnych dziedzinach.</div>
+        </div>
+    
+        <div class="border-t border-gray-300 mx-4">
+          <button class="w-full text-left py-5 flex justify-between items-center text-xl font-semibold hover:text-blue" onclick="toggleAnswer(3)">
+            <span>Czy mogę zostać usługodawcą?</span>
+            <span>+</span>
+          </button>
+          <div id="answer3" class="text-gray-700 text-lg pb-4 hidden">Tak, wystarczy zarejestrować się jako usługodawca i wypełnić odpowiednie informacje w swoim profilu.</div>
+        </div>
+    
+        <div class="border-t border-gray-300 mx-4">
+          <button class="w-full text-left py-5 flex justify-between items-center text-xl font-semibold hover:text-blue" onclick="toggleAnswer(4)">
+            <span>Jakie są opłaty za korzystanie z platformy?</span>
+            <span>+</span>
+          </button>
+          <div id="answer4" class="text-gray-700 text-lg pb-4 hidden">Nasza platforma jest darmowa dla klientów. Usługodawcy mogą korzystać z różnych planów subskrypcyjnych, aby uzyskać dodatkowe funkcje.</div>
+        </div>
+    
+        <div class="border-t border-gray-300 mx-4">
+          <button class="w-full text-left py-5 flex justify-between items-center text-xl font-semibold hover:text-blue" onclick="toggleAnswer(5)">
+            <span>Jak mogę skontaktować się z obsługą klienta?</span>
+            <span>+</span>
+          </button>
+          <div id="answer5" class="text-gray-700 text-lg pb-4 hidden">Możesz skontaktować się z nami za pośrednictwem formularza kontaktowego dostępnego na stronie lub przez e-mail.</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- FOOTER -->
+    
+    <footer id="footer" class="bg-footer text-white py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-4 md:mb-0">
+            <h5 class="text-lg font-semibold">Kontakt</h5>
+            <p class="mt-2">Email: kontakt@twojastrona.pl</p>
+            <p>Telefon: +48 123 456 789</p>
+            <p>Adres: ul. Przykładowa 1, 00-000 Miasto</p>
+          </div>
+    
+          <div class="mb-4 md:mb-0">
+            <h5 class="text-lg font-semibold">Szybkie linki</h5>
+            <ul class="mt-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">O nas</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Działanie</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Usługi</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Kontakt</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Polityka prywatności</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Regulamin</a></li>
+            </ul>
+          </div>
+    
+          <div>
+            <h5 class="text-lg font-semibold">Śledź nas</h5>
+            <ul class="flex space-x-4 mt-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+          <p class="text-sm">&copy; 2024 Twoja Strona. Wszelkie prawa zastrzeżone.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <script>
+      //FAQ ANIMATION
+
+      function toggleAnswer(id) {
+        const answer = document.getElementById(`answer${id}`);
+        answer.classList.toggle('hidden');
+      }
+        
+
+      window.addEventListener("scroll", function() {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 150) {  // Zaczyna odczepiać się po przewinięciu o 50px
+          navbar.classList.add("fixed", "top-0", "bg-white", "border-b", "border-gray-200", "shadow-md");
+          navbar.classList.remove("absolute");
+        } else {  // Przywraca integrację z banerem na górze
+          navbar.classList.add("absolute");
+          navbar.classList.remove("fixed", "bg-white", "border-b", "border-gray-200", "shadow-md");
+        }
+      });
+        //X button mobile
+
+        function toggleMenu() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          
+          if (mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.remove('animate__slideOutRight'); // Zdejmij animację zamknięcia
+              mobileMenu.classList.remove('hidden'); // Pokaż menu
+              mobileMenu.classList.add('animate__slideInRight'); // Dodaj animację otwarcia
+          } else {
+              mobileMenu.classList.remove('animate__slideInRight'); // Zdejmij animację otwarcia
+              mobileMenu.classList.add('animate__slideOutRight'); // Dodaj animację zamknięcia
+          
+              // Czekaj na zakończenie animacji przed ukryciem menu
+              mobileMenu.addEventListener('animationend', () => {
+                  mobileMenu.classList.add('hidden'); // Ukryj menu po zakończeniu animacji
+                  mobileMenu.classList.remove('animate__slideOutRight'); // Zdejmij animację zamknięcia
+              }, { once: true });
+          }
+      }
+      
+      // Zamknięcie menu po kliknięciu na opcję
+      document.querySelectorAll('#mobile-menu a').forEach(item => {
+          item.addEventListener('click', () => {
+              toggleMenu(); // Zamknij menu po kliknięciu w link
+          });
+      });
+      
+      // Optional: Close the menu when clicking outside of it
+      document.addEventListener('click', (event) => {
+          const mobileMenu = document.getElementById('mobile-menu');
+          const menuButton = document.getElementById('menu-button');
+          const closeButton = document.getElementById('close-button');
+          
+          if (mobileMenu.classList.contains('hidden') === false &&
+              !mobileMenu.contains(event.target) &&
+              !menuButton.contains(event.target) &&
+              !closeButton.contains(event.target)) {
+              toggleMenu(); // Zamknij menu przy kliknięciu na zewnątrz
+          }
+      });
+      
+          
+
+
+/*
+          document.addEventListener('DOMContentLoaded', () => {
+            const searchCity = document.getElementById('searchCity');
+            const citySuggestionsContainer = document.getElementById('autocomplete-city-items');
+    
+            searchCity.addEventListener('input', async () => {
+                const query = searchCity.value;
+    
+                if (!query) {
+                    citySuggestionsContainer.innerHTML = ''; // Wyczyść podpowiedzi, gdy pole jest puste
+                    citySuggestionsContainer.classList.add('hidden'); // Ukryj listę podpowiedzi
+                    return;
+                }
+    
+                // Wysyłanie zapytania do backendu
+                const response = await fetch(`/search-city?query=${query}`);
+                const suggestions = await response.json();
+    
+                // Wyświetlanie podpowiedzi
+                if (suggestions.length > 0) {
+                    citySuggestionsContainer.innerHTML = suggestions.map(city => `<div class="p-2 cursor-pointer hover:bg-gray-100">${city}</div>`).join('');
+                    citySuggestionsContainer.classList.remove('hidden'); // Pokaż listę podpowiedzi
+                } else {
+                    citySuggestionsContainer.innerHTML = ''; // Wyczyść, gdy brak podpowiedzi
+                    citySuggestionsContainer.classList.add('hidden'); // Ukryj listę podpowiedzi
+                }
+            });
+    
+            // Obsługa kliknięć w podpowiedzi
+            citySuggestionsContainer.addEventListener('click', (event) => {
+                if (event.target.tagName === 'DIV') {
+                    searchCity.value = event.target.innerText; // Ustaw wartość inputa na wybraną podpowiedź
+                    citySuggestionsContainer.innerHTML = ''; // Wyczyść podpowiedzi
+                    citySuggestionsContainer.classList.add('hidden'); // Ukryj listę podpowiedzi
+                }
+            });
+        });
+      
+        */
+        
+
+            
+    </script>
+</body>
+</html>
